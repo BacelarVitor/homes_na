@@ -1,15 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HousingLocationComponent } from '../housing-location/housing-location.component';
 
 @Component({
   selector: 'app-homes',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HousingLocationComponent],
   template: `
-    <form>
-      <input type="text" placeholder="Filter by city">
-      <button type="button" class="primary">Search</button>
-    </form>
+    <section>
+      <form>
+        <input type="text" placeholder="Filter by city">
+        <button type="button" class="primary">Search</button>
+      </form>
+    </section>
+    <section>
+      <app-housing-location></app-housing-location>
+    </section>
   `,
   styles: [`
    .results {
@@ -56,4 +62,4 @@ export class HomesComponent {
 }
 
 // Create the application’s HousingLocation component
-//https://angular.dev/tutorials/first-app/HousingLocation
+// https://angular.dev/tutorials/first-app/interfaces
